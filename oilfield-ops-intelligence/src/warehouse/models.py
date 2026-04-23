@@ -58,7 +58,7 @@ class FactProduction(Base):
     efficiency_index = Column(Numeric(8, 2))
     
     data_quality_score = Column(Numeric(3, 2))
-    data_quality_flags = Column(ARRAY(Text))
+    data_quality_flags = Column(Text)
     is_anomaly = Column(Boolean, default=False)
     anomaly_severity = Column(String(10), default='NONE')
     

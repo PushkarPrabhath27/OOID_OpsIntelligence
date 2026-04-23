@@ -1,30 +1,19 @@
 import streamlit as st
 
-def render_kpi_card(title: str, value: str, delta: str, delta_label: str, icon: str):
+def render_kpi_card(label: str, value: str, delta: str, context: str, icon: str):
     """
-    Renders a premium, dark-themed KPI card using custom HTML/CSS.
+    Minimalist, high-density HUD card.
     """
-    delta_color = "#00E676" if "+" in delta else "#FF4B4B"
+    is_positive = "+" in delta
+    delta_color = "#00F2FF" if is_positive else "#FF3B30"
     
     st.markdown(f"""
-        <div style="
-            background-color: #141927;
-            padding: 20px;
-            border-radius: 10px;
-            border-top: 3px solid #E8A100;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-            margin-bottom: 20px;
-        ">
-            <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                <span style="font-size: 24px; margin-right: 10px;">{icon}</span>
-                <span style="color: #8896B3; font-size: 14px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px;">{title}</span>
-            </div>
-            <div style="color: #F0F4FF; font-size: 28px; font-weight: 700; margin-bottom: 5px; font-family: 'Space Mono', monospace;">
-                {value}
-            </div>
-            <div style="display: flex; align-items: center;">
-                <span style="color: {delta_color}; font-weight: 700; font-size: 14px; margin-right: 8px;">{delta}</span>
-                <span style="color: #8896B3; font-size: 12px;">{delta_label}</span>
+        <div class="stealth-card">
+            <div class="hud-label">{label}</div>
+            <div class="hud-value">{value}</div>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="hud-delta" style="color: {delta_color}">{delta} <span style="color: #48484A; font-size: 0.65rem;">{context}</span></div>
+                <div style="font-size: 0.8rem; opacity: 0.5;">{icon}</div>
             </div>
         </div>
     """, unsafe_allow_html=True)
