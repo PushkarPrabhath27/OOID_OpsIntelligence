@@ -1,74 +1,73 @@
 
-/* OOID STEALTH DESIGN SYSTEM - PRO GRADE */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Manrope:wght@700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+/* OOID EMERALD NAVY DESIGN SYSTEM */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;800;900&family=Inter:wght@400;600&display=swap');
 
 :root {
-    --bg-deep: #020203;
-    --card-bg: #0A0A0C;
-    --accent: #00F2FF;
-    --accent-dim: rgba(0, 242, 255, 0.1);
-    --border: #1A1A1E;
-    --text-primary: #FFFFFF;
-    --text-secondary: #8E8E93;
+    --bg-dark: #0A1929;
+    --card-bg: #124170;
+    --accent-mint: #AAFFC7;
+    --accent-emerald: #67C090;
+    --border-teal: #215B63;
+    --text-main: #FFFFFF;
 }
 
 .stApp {
-    background-color: var(--bg-deep) !important;
+    background-color: var(--bg-dark) !important;
     font-family: 'Inter', sans-serif !important;
 }
 
-/* Sidebar Customization */
+/* Sidebar Styling */
 [data-testid="stSidebar"] {
-    background-color: #000000 !important;
-    border-right: 1px solid var(--border);
+    background-color: #08121C !important;
+    border-right: 2px solid var(--border-teal);
 }
 
-/* Professional Cards */
-.stealth-card {
+/* Premium Heading System */
+h1 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 900 !important;
+    font-size: 3.2rem !important;
+    letter-spacing: -0.05em !important;
+    color: var(--accent-mint) !important;
+    margin-bottom: 0.5rem !important;
+}
+
+h2, h3 {
+    font-family: 'Outfit', sans-serif !important;
+    font-weight: 800 !important;
+    letter-spacing: -0.03em !important;
+    color: var(--accent-emerald) !important;
+}
+
+/* Card System */
+.enterprise-card {
     background: var(--card-bg);
-    border: 1px solid var(--border);
-    border-radius: 4px; /* Industrial sharp look */
-    padding: 20px;
-    margin-bottom: 12px;
+    border: 2px solid var(--border-teal);
+    border-radius: 20px;
+    padding: 24px;
+    margin-bottom: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
 }
 
-.stealth-card:hover {
-    border-color: var(--accent);
+.enterprise-card:hover {
+    border-color: var(--accent-mint);
+    transform: translateY(-4px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* Metric HUD Styling */
-.hud-label {
+/* Metric Typography */
+.m-value {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    color: white;
+}
+
+.m-label {
     font-family: 'Inter', sans-serif;
-    font-size: 0.7rem;
-    color: var(--text-secondary);
+    font-size: 0.8rem;
     text-transform: uppercase;
+    font-weight: 600;
+    color: var(--accent-emerald);
     letter-spacing: 0.1em;
 }
-
-.hud-value {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 1.8rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    margin: 4px 0;
-}
-
-.hud-delta {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
-}
-
-/* Global Title Override */
-h1, h2, h3 {
-    font-family: 'Manrope', sans-serif !important;
-    font-weight: 800 !important;
-    letter-spacing: -0.04em !important;
-    color: white !important;
-    background: none !important;
-    -webkit-text-fill-color: initial !important;
-}
-
-/* Hide standard Streamlit elements */
-#MainMenu {visibility: hidden;}
-footer {visibility: hidden;}
-header {visibility: hidden;}

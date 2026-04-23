@@ -59,21 +59,23 @@ analytics, active_db_path = get_analytics_engine()
 
 # --- 3. CONSOLIDATED SIDEBAR ---
 with st.sidebar:
-    st.image("https://img.icons8.com/fluency/96/lightning-bolt.png", width=60)
-    st.title("OOID Platform")
-    st.caption("Strategic Operations Intelligence")
-    st.markdown("---")
+    st.markdown(f"""
+        <div style="padding: 1.5rem 0; border-bottom: 2px solid #215B63; margin-bottom: 2.5rem;">
+            <h2 style="margin: 0; font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 1.8rem; color: #AAFFC7 !important;">OOID</h2>
+            <p style="margin: 0; font-size: 0.75rem; color: #67C090; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em;">Enterprise Intel Layer</p>
+        </div>
+    """, unsafe_allow_html=True)
     
     page = st.selectbox(
-        "Select Perspective", 
+        "NAVIGATION_INDEX", 
         ["Executive Overview", "State Drilldown", "Pipeline Monitor"],
         label_visibility="collapsed"
     )
     
-    st.markdown("---")
+    st.markdown("<br><br>", unsafe_allow_html=True)
     
     # --- LIVE DATA DIAGNOSTICS (FAANG DEBUG MODE) ---
-    with st.expander("🔍 System Health", expanded=True):
+    with st.expander("SYSTEM_INTEGRITY", expanded=False):
         st.write(f"**Target DB:** `{os.path.basename(active_db_path)}`")
         try:
             with analytics.engine.connect() as conn:
