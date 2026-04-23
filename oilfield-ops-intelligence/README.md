@@ -12,7 +12,7 @@
 ## 🎬 System Demonstration
 
 <div align="center">
-  <video src="docs/media/demo.mp4" width="100%" controls autoplay loop muted>
+  <video src="./docs/media/demo.mp4" width="100%" controls>
     Your browser does not support the video tag.
   </video>
   <p><i>Real-time 3D Geospatial Mesh and Production Telemetry in action.</i></p>
