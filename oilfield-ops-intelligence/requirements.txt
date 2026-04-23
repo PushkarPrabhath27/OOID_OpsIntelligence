@@ -1,0 +1,15 @@
+streamlit
+pandas
+numpy
+plotly
+folium
+sqlalchemy
+psycopg2-binary
+requests
+python-dotenv
+apache-airflow
+pytest
+pydantic
+loguru
+streamlit-folium
+great-expectations
